@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessAI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script type="module" src="https://unpkg.com/chessboard-element?module"></script>
+
+    <link rel="stylesheet" href="/./static/dashboard.css">
+    <script src="/./static/dashboard.js" defer></script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <chess-board id="board" style="width: 400px" position="start" draggable-pieces></chess-board>
+    <div id="controls">
+        <button id="newGameBtn">New Game</button>
+        <button id="undoBtn">Undo Move</button>
+        <button id="reviewBtn">Game Review</button>
+        <button id="downloadBtn" style="display: none;">Download PGN</button>
+    </div>
+
+    <div id="reviewModal" class="modal">
+        
+    <div class="modal-content">
+            <span id="closeModal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 22px;">&times;</span>
+            <h2>Game Review</h2>
+            <div id="progressBar" style="display: none;">
+                <progress value="0" max="100"></progress>
+            </div>
+            <div id="info">
+                <p id="blunders">Blunders: <span id="bcount"></span></p> 
+                <p id="mistakes">Mistakes: <span id="mcount"></span></p> 
+                <p id="great">Great Moves: <span id="gcount"></span></p>
+            </div>
+            <div id="reviewMoves" style="max-height: 200px; overflow-y: auto; margin-bottom: 15px;background-color: #232323;">
+                <ol id="movesList">
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessAI</title>
+    <link rel="stylesheet" href="/./static/register.css">
+    <script src="/./static/register.js" defer></script>
+</head>
+<body>
+    <h1>Register</h1>
+    <form id="registerForm">
+        <p id="errorMessage" style="display: none;"></p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" minlength="3" required>
+
+        <label for="password">Password:</label>
+        <div class="input-container">
+            <input type="password" id="password" name="password" minlength="8" required>
+            <span id="togglePassword" class="password-toggle-icon" role="button" tabindex="0" aria-pressed="false" aria-label="Show password">👁️</span>
+        </div>
+
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
