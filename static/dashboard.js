@@ -100,7 +100,7 @@ document.getElementById('reviewBtn').onclick = async function() {
     // Simulate progress
     let percent = 0;
     const interval = setInterval(() => {
-        percent += Math.random() * 10;
+        percent += Math.random() * 6;
         if (percent > 90) percent = 90;
         progressElem.value = percent;
     }, 200);

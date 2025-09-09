@@ -39,7 +39,7 @@ document.getElementById('registerForm').onsubmit = function(e) {
         if (r.access_token) {
             alert("User registered successfully!");
             localStorage.setItem('access_token', r.access_token);
-            window.location.href = 'pages/dashboard.html';
+            window.location.href = '/pages/dashboard.html';
         }
     })
     .catch(error => {
