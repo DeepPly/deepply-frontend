@@ -64,10 +64,10 @@ document.getElementById('reviewBtn').onclick = async function() {
     document.getElementById('downloadBtn').style.display = 'inline-block';
     if (localStorage.getItem('access_token') === null) {
         alert('Please log in to review the game.');
-        window.location.href = 'login.html';
+        window.location.href = '/pages/index.html';
     }
     try {
-        const protectedResponse = await fetch('http://127.0.0.1:8000/protected', {
+        const protectedResponse = await fetch('https://deepply.someonewhoexists.hackclub.app/api/protected', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('access_token')
@@ -82,7 +82,7 @@ document.getElementById('reviewBtn').onclick = async function() {
         localStorage.removeItem('access_token');
         localStorage.setItem('pgn', pgn);
         localStorage.setItem('moveSans', JSON.stringify(moveSans));
-        window.location.href = 'index.html';
+        window.location.href = '/pages/index.html';
         return;
     }
 
@@ -109,7 +109,7 @@ document.getElementById('reviewBtn').onclick = async function() {
     var worked = false;
 
     try {
-        const reviewResponse = await fetch('http://127.0.0.1:8000/review', {
+        const reviewResponse = await fetch('https://deepply.someonewhoexists.hackclub.app/api/review', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

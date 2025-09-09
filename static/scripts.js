@@ -8,7 +8,7 @@ document.getElementById("loginForm").onsubmit = function(e) {
         password: password
     }
 
-    fetch('http://127.0.0.1:8000/token', {
+    fetch('https://deepply.someonewhoexists.hackclub.app/api/token', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -19,7 +19,7 @@ document.getElementById("loginForm").onsubmit = function(e) {
     .then(data => {
         if (data.access_token) {
             localStorage.setItem('access_token', data.access_token);
-            window.location.href = 'dashboard.html';
+            window.location.href = '/pages/dashboard.html';
         }
     })
     .catch(error => {

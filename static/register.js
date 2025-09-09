@@ -21,7 +21,7 @@ document.getElementById('registerForm').onsubmit = function(e) {
         password: password,
         email: email
     };
-    fetch('http://127.0.0.1:8000/create_user', {
+    fetch('https://deepply.someonewhoexists.hackclub.app/api/create_user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ document.getElementById('registerForm').onsubmit = function(e) {
         if (r.access_token) {
             alert("User registered successfully!");
             localStorage.setItem('access_token', r.access_token);
-            window.location.href = 'dashboard.html';
+            window.location.href = 'pages/dashboard.html';
         }
     })
     .catch(error => {
